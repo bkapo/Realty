@@ -1,0 +1,9 @@
+<mat-list-item>
+    <img matListAvatar src="../../assets/img/person.png" alt="...">
+    <h3 matLine> {{people.FirstName}} {{people.LastName}} </h3>
+    <p matLine>
+        <span> {{people.Mobile}} </span>
+        <span class="demo-2"> {{people.InvolvedPartyType | involvedPartyType}} </span>
+        <span *ngIf="people.InvolvedPartyType == '5'"> --  {{people.Demands.length}} </span>
+    </p>
+</mat-list-item>
