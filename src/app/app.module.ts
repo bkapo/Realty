@@ -17,7 +17,6 @@ import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 
 /* Feature Modules */
-// import { InvolvedPartyModule } from './involved-party/involved-party.module';
 
 @NgModule({
   declarations: [
@@ -29,8 +28,7 @@ import { AppRoutingModule } from './app-routing.module';
     HttpClientModule,
     MaterialModule,
     CoreModule,
-    AppRoutingModule,
-    //InvolvedPartyModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

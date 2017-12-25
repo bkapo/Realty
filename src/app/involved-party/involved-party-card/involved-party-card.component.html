@@ -1,4 +1,21 @@
 <mat-list-item>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+                  <mat-icon>business</mat-icon>
+                  <span>Ακίνητα</span>
+                </button>
+        <button mat-menu-item>
+                  <mat-icon>shopping_basket</mat-icon>
+                  <span>Ζητήσεις</span>
+                </button>
+        <button mat-menu-item>
+                  <mat-icon>mode_edit</mat-icon>
+                  <span>Edit</span>
+                </button>
+    </mat-menu>
     <img matListAvatar src="../../assets/img/person.png" alt="...">
     <h3 matLine> {{people.FirstName}} {{people.LastName}} </h3>
     <p matLine>
