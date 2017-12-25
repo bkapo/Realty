@@ -1,12 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { InvolvedPartyListComponent } from './involved-party/involved-party-list/involved-party-list.component';
-
-
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full'},
-  { path: 'agents', component: InvolvedPartyListComponent },
+  { path: 'agents', loadChildren: '../app/involved-party/involved-party.module#InvolvedPartyModule' }
 ];
 
 @NgModule({

@@ -17,7 +17,7 @@ import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 
 /* Feature Modules */
-import { InvolvedPartyModule } from './involved-party/involved-party.module';
+// import { InvolvedPartyModule } from './involved-party/involved-party.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import { InvolvedPartyModule } from './involved-party/involved-party.module';
     MaterialModule,
     CoreModule,
     AppRoutingModule,
-    InvolvedPartyModule
+    //InvolvedPartyModule
   ],
   providers: [],
   bootstrap: [AppComponent]
