@@ -17,10 +17,14 @@
                 </button>
     </mat-menu>
     <img matListAvatar src="../../assets/img/person.png" alt="...">
-    <h3 matLine> {{people.FirstName}} {{people.LastName}} </h3>
+    <h2 matLine class="mat-h2">{{people.FirstName}} {{people.LastName}} </h2>
     <p matLine>
-        <span> {{people.Mobile}} </span>
-        <span class="demo-2"> {{people.InvolvedPartyType | involvedPartyType}} </span>
+        <mat-icon class="material-icons md-16">phone</mat-icon> <span> {{people.Mobile}} </span>
+    </p>
+    <p matLine color="primary">
+        <span>  {{people.InvolvedPartyType | involvedPartyType}}  </span>
+    </p>
+    <p matLine>
         <span *ngIf="people.InvolvedPartyType == '5'"> --  {{people.Demands.length}} </span>
     </p>
 </mat-list-item>
