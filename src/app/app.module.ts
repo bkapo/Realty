@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ServiceWorkerModule } from '@angular/service-worker';
+
+import { environment } from '../environments/environment';
 
 /* Angular Material */
 import { MaterialModule } from './material/material.module';
@@ -28,7 +31,9 @@ import { AppRoutingModule } from './app-routing.module';
     HttpClientModule,
     MaterialModule,
     CoreModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
+
   ],
   providers: [],
   bootstrap: [AppComponent]

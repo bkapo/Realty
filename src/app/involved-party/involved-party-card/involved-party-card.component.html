@@ -25,6 +25,6 @@
         <span>  {{people.InvolvedPartyType | involvedPartyType}}  </span>
     </p>
     <p matLine>
-        <span *ngIf="people.InvolvedPartyType == '5'"> --  {{people.Demands.length}} </span>
+        <span *ngIf="people.InvolvedPartyType === 5"> --  {{people.Demands.length}} </span>
     </p>
 </mat-list-item>
