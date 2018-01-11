@@ -21,8 +21,10 @@
     <p matLine>
         <mat-icon class="material-icons md-16">phone</mat-icon> <span> {{people.Mobile}} </span>
     </p>
-    <p matLine color="primary">
-        <span>  {{people.InvolvedPartyType | involvedPartyType}}  </span>
+    <p matLine>
+        <mat-chip-list>
+            <mat-chip color="primary" selected="true">{{people.InvolvedPartyType | involvedPartyType}} </mat-chip>
+        </mat-chip-list>
     </p>
     <p matLine>
         <span *ngIf="people.InvolvedPartyType === 5"> --  {{people.Demands.length}} </span>
