@@ -4,7 +4,7 @@
     "name": "Epsilon Realty",
     "scope": "/",
     "display": "fullscreen",
-    "start_url": "http://localhost:8080/",
+    "start_url": "/",
     "short_name": "Epsilon",
     "theme_color": "transparent",
     "description": "Epsilon Realty App",

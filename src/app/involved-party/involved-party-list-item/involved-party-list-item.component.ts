@@ -11,11 +11,11 @@ import { InvolvepdPartyModel } from '../../shared/models/involved-party.model';
 
 
 @Component({
-  selector: 'app-involved-party-card',
-  templateUrl: './involved-party-card.component.html',
-  styleUrls: ['./involved-party-card.component.css']
+  selector: 'app-involved-party-list-item',
+  templateUrl: './involved-party-list-item.component.html',
+  styleUrls: ['./involved-party-list-item.component.css']
 })
-export class InvolvedPartyCardComponent implements OnInit {
+export class InvolvedPartyListItemComponent implements OnInit {
   @Input() people: InvolvepdPartyModel;
   newDm: DemandModel;
 

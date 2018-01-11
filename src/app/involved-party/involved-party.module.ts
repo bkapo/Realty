@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { MaterialModule } from '../material/material.module';
 
-import { InvolvedPartyCardComponent } from './involved-party-card/involved-party-card.component';
+import { InvolvedPartyListItemComponent } from './involved-party-list-item/involved-party-list-item.component';
 import { InvolvedPartyListComponent } from './involved-party-list/involved-party-list.component';
 import { involvedPartyRoutes } from './involved-party-routing.module';
 
@@ -16,7 +16,7 @@ import { involvedPartyRoutes } from './involved-party-routing.module';
         involvedPartyRoutes
     ],
     declarations: [
-        InvolvedPartyCardComponent,
+        InvolvedPartyListItemComponent,
         InvolvedPartyListComponent
     ],
     exports: [
