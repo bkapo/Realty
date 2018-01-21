@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full'},
-  { path: 'agents', loadChildren: '../app/involved-party/involved-party.module#InvolvedPartyModule' }
+  { path: 'iplist', loadChildren: '../app/involved-party/involved-party.module#InvolvedPartyModule' }
 ];
 
 @NgModule({
