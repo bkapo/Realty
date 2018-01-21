@@ -1,12 +1,11 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { InvolvedPartyListItemComponent } from './involved-party-list-item/involved-party-list-item.component';
-import { InvolvedPartyListComponent } from './involved-party-list/involved-party-list.component';
+import { InvolvedPartyListContainerComponent } from './involved-party-list-container/involved-party-list-container.component';
 
 
 const routes: Routes = [
-  { path: '', component: InvolvedPartyListComponent }
+  { path: ':typeid', component: InvolvedPartyListContainerComponent }
 ];
 
 export const involvedPartyRoutes: ModuleWithProviders = RouterModule.forChild(routes);
