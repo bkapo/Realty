@@ -17,7 +17,6 @@ export class InvolvedPartyListContainerComponent implements OnInit, OnDestroy {
   constructor(public ipService: IPService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    console.log('pppppp');
     this.sub = this.route.params.subscribe(params => {
       this.invPartyType = +params['typeid']; // (+) converts string 'id' to a number
       this.getAllInvolvedParties();
@@ -26,7 +25,7 @@ export class InvolvedPartyListContainerComponent implements OnInit, OnDestroy {
 
   getAllInvolvedParties() {
     console.log(this.invPartyType);
-    this.ipService.getInvolvedPartyByType(1).subscribe((inv: InvolvepdPartyModel[]) => {
+    this.ipService.getInvolvedPartyByType(this.invPartyType).subscribe((inv: InvolvepdPartyModel[]) => {
       console.log(inv);
       this.invPartyList = inv;
     });
