@@ -18,14 +18,12 @@ import { CoreModule } from './core/core.module';
 
 /* Routing Module */
 import { AppRoutingModule } from './app-routing.module';
-// import { InvolvedPartyListContainerComponent } from './involved-party-list-container/involved-party-list-container.component';
 
 /* Feature Modules */
 
 @NgModule({
   declarations: [
-    AppComponent,
-    // InvolvedPartyListContainerComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
