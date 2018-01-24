@@ -22,6 +22,9 @@ import { involvedPartyRoutes } from './involved-party-routing.module';
         InvolvedPartyListContainerComponent
     ],
     exports: [
+        InvolvedPartyListItemComponent,
+        InvolvedPartyListComponent,
+        InvolvedPartyListContainerComponent
     ],
     providers: []
 })
