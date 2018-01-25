@@ -13,7 +13,7 @@ import { OtherPropertyTypePipe } from './pipes/other-property-type.pipe';
 import { PurposePipe } from './pipes/purpose.pipe';
 import { HeatingCategoryPipe } from './pipes/heating-category.pipe';
 import { HeatingTypePipe } from './pipes/heating-type.pipe';
-import { LandZonePipe } from './pipes/land-zone.pipe'
+import { LandZonePipe } from './pipes/land-zone.pipe';
 import { OrientationPipe } from './pipes/orientation.pipe';
 import { AccessPipe } from './pipes/access.pipe';
 import { EnergyPerformancePipe } from './pipes/energy-performance.pipe';

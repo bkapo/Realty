@@ -159,9 +159,9 @@ export class IPService {
             // Let the app keep running by returning an empty result.
             // return of(result as T);
             if (error.status === 404) {
-                return Observable.throw('Not found');
+                return Observable.throw(`${operation} failed: ${error.message}`);
             } else {
-                return Observable.throw(error || 'Server error');
+                return Observable.throw(`${operation} failed: ${error.message}`);
             }
 
         };

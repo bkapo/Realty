@@ -1,9 +1,9 @@
 <mat-card>
     <form class="example-form">
         <mat-form-field class="example-full-width">
-            <input matInput search placeholder="Αναζητηση....." value="">
+            <input matInput type:search placeholder="Αναζητηση....." #box (keyup.enter)="onEnter(box.value)">
         </mat-form-field>
     </form>
 </mat-card>
 
-<app-involved-party-list></app-involved-party-list>
+<app-involved-party-list [ipList]="involvedparties"></app-involved-party-list>
