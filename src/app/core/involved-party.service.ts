@@ -4,6 +4,8 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 
 import { Observable } from 'rxjs/Observable';
 import { map, filter, catchError } from 'rxjs/operators';
+import 'rxjs/add/observable/throw';
+
 
 import { INVOLVEDPARTY_API_URL } from './data.service';
 import { InvolvepdPartyModel } from '../shared/models/involved-party.model';
@@ -126,22 +128,6 @@ export class IPService {
 
 
     /**
-     * Data helper method
-     * Check for bad response
-     * parse the response data into JSON object
-     */
-    private extractData(res: Response) {
-        if (res.status < 200 || res.status >= 300) {
-            throw new Error('Bad response status: ' + res.status);
-        } else if (res.status === 204) {
-            return [{ status: res.status, json: null }];
-        }
-
-        const body = res.json();
-        return body || {};
-    }
-
-    /**
      * Handle Http operation that failed.
      * Let the app continue.
      * @param operation - name of the operation that failed
@@ -150,19 +136,34 @@ export class IPService {
     private handleError<T>(operation = 'operation', result?: T) {
         return (error: any): Observable<T> => {
 
+
+
+      if (error.error instanceof Error) {
+        // A client-side or network error occurred. Handle it accordingly.
+        console.log('An error occurred:', error.error.message);
+        return Observable.throw(`An error occurred: ${error}`);
+      } else {
+        // The backend returned an unsuccessful response code.
+        // The response body may contain clues as to what went wrong,
+        console.log(`Backend returned code ${error.status}, body was: ${error.error}`);
+        return Observable.throw(`Δεν βρέθηκαν αποτελέσματα.: ${error.status}`);
+      }
+
+
+
             // TODO: send the error to remote logging infrastructure
-            console.error(error); // log to console instead
+            // console.error(error); // log to console instead
 
             // TODO: better job of transforming error for user consumption
             // this.log(`${operation} failed: ${error.message}`);
 
             // Let the app keep running by returning an empty result.
             // return of(result as T);
-            if (error.status === 404) {
-                return Observable.throw(`${operation} failed: ${error.message}`);
-            } else {
-                return Observable.throw(`${operation} failed: ${error.message}`);
-            }
+            // if (error.status === 404) {
+            //     return Observable.throw(`${operation} failed: ${error.message}`);
+            // } else {
+            //     return Observable.throw(`${operation} failed: ${error.message}`);
+            // }
 
         };
     }
