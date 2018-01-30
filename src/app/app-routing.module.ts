@@ -4,7 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   { path: '', redirectTo: 'search', pathMatch: 'full'},
   { path: 'search', loadChildren: '../app/search/search.module#SearchModule' },
-  { path: 'iplist', loadChildren: '../app/involved-party/involved-party.module#InvolvedPartyModule' }
+  { path: 'iplist', loadChildren: '../app/involved-party/involved-party.module#InvolvedPartyModule' },
+  // { path: 'rpList', loadChildren: '../app/realty-property/realty-property.module#RealtyPropertyModule' }
 ];
 
 @NgModule({

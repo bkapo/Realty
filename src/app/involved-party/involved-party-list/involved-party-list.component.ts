@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { InvolvepdPartyModel } from '../../shared/models/involved-party.model';
-import { IPService } from '../../core/involved-party.service';
 
 @Component({
   selector: 'app-involved-party-list',

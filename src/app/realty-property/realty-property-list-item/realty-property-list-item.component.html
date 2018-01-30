@@ -1,0 +1,26 @@
+<mat-list-item>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+                <mat-icon>map</mat-icon>
+                <span>Χαρτης</span>
+              </button>
+        <button mat-menu-item>
+                <mat-icon>mode_edit</mat-icon>
+                <span>Edit</span>
+              </button>
+    </mat-menu>
+    <img matListAvatar src="../../assets/img/building.png" alt="...">
+    <h2 matLine class="mat-h2">{{realEstate.Title}}</h2>
+    <p matLine>
+        <mat-icon class="material-icons md-16">crop_square</mat-icon> <span> {{realEstate.SqFeetInterior}} τ.μ.</span>
+    </p>
+    <p matLine>
+        <mat-chip-list>
+            <mat-chip color="primary" selected="true">{{realEstate.Purpose | purpose }} - {{realEstate.Price}}</mat-chip>
+        </mat-chip-list>
+    </p>
+</mat-list-item>
+<mat-divider></mat-divider>

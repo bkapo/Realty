@@ -1,10 +1,7 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import { MatSnackBar } from '@angular/material';
-import { InvolvepdPartyModel } from './../../shared/models/involved-party.model';
-import { IPService } from '../../core/involved-party.service';
 
 @Component({
   selector: 'app-search-box',
@@ -12,21 +9,22 @@ import { IPService } from '../../core/involved-party.service';
   styleUrls: ['./search-box.component.css']
 })
 export class SearchBoxComponent implements OnInit {
-  involvedparties: Array<InvolvepdPartyModel>;
+  propertyID: number;
 
-  constructor(public ipService: IPService, public snackBar: MatSnackBar) { }
+  constructor(public snackBar: MatSnackBar) { }
 
   ngOnInit() {
   }
 
   onEnter(q: string) {
-    this.involvedparties = null;
-    this.ipService.searchInolvedPartyByLastName(q)
-      .subscribe(
-      (people: InvolvepdPartyModel[]) => this.involvedparties = people,
-      error => this.openSnackBar(error, 'Search')
-      );
-
+    // this.ipService.searchInolvedPartyByLastName(q)
+    //   .subscribe(
+    //   (people: InvolvepdPartyModel[]) => this.involvedparties = people,
+    //   error => this.openSnackBar(error, 'Search')
+    //   );
+    // const propID: number = +q;
+    this.propertyID  = +q;
+    // this.router.navigate(['/rpList', propID]);
   }
 
   openSnackBar(message: string, action: string) {
