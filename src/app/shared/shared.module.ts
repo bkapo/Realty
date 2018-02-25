@@ -17,6 +17,7 @@ import { LandZonePipe } from './pipes/land-zone.pipe';
 import { OrientationPipe } from './pipes/orientation.pipe';
 import { AccessPipe } from './pipes/access.pipe';
 import { EnergyPerformancePipe } from './pipes/energy-performance.pipe';
+import { NgcFloatButtonModule } from 'ngc-float-button';
 
 const REALTY_PIPES = [
   InvolvedPartyTypePipe,
@@ -45,7 +46,8 @@ const REALTY_PIPES = [
       CommonModule,
       FormsModule,
       ReactiveFormsModule,
-      REALTY_PIPES
+      REALTY_PIPES,
+      NgcFloatButtonModule
     ]
   })
   export class SharedModule { }

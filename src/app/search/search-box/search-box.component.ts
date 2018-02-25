@@ -64,4 +64,20 @@ export class SearchBoxComponent implements OnInit {
     });
   }
 
+  addProperty() {
+    this.openSnackBar('addProperty', 'FAB');
+  }
+
+  addCommercial() {
+    this.openSnackBar('addCommercial', 'FAB');
+  }
+
+  addLand() {
+    this.openSnackBar('addLand', 'FAB');
+  }
+
+  addOther() {
+    this.openSnackBar('addOther', 'FAB');
+  }
+
 }

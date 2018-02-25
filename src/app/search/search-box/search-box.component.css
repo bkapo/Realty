@@ -7,3 +7,10 @@
 .example-full-width {
     width: 100%;
 }
+
+.fabPosition {
+    position: fixed;
+    bottom: 60px;
+    right: 60px;
+    color: white;
+}
