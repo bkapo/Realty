@@ -25,14 +25,15 @@
         </mat-form-field>
     </mat-expansion-panel>
 </mat-card>
-<span class="fabPosition">
-    <ngc-float-button icon="add">
-        <ngc-float-item-button icon="home" content="Ακίνητο" (click)="addProperty()"></ngc-float-item-button>
-        <ngc-float-item-button icon="location_city" content="Επαγγελματικό" (click)="addCommercial()"></ngc-float-item-button>
-        <ngc-float-item-button icon="terrain" content="Γή"(click)="addLand()"></ngc-float-item-button>
-        <ngc-float-item-button icon="satellite" content="Άλλο"(click)="addOther()"></ngc-float-item-button>
-    </ngc-float-button>
-  </span>
+
+
+<ngc-float-button icon="add" class="fabPosition">
+    <ngc-float-item-button icon="home" content="Ακίνητο" (click)="addProperty()"></ngc-float-item-button>
+    <ngc-float-item-button icon="location_city" content="Επαγγελματικό" (click)="addCommercial()"></ngc-float-item-button>
+    <ngc-float-item-button icon="terrain" content="Γή" (click)="addLand()"></ngc-float-item-button>
+    <ngc-float-item-button icon="satellite" content="Άλλο" (click)="addOther()"></ngc-float-item-button>
+</ngc-float-button>
+
 
 <app-involved-party-list *ngIf="involvedparties != null" [ipList]="involvedparties"></app-involved-party-list>
 
