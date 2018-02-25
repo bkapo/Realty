@@ -4,7 +4,7 @@
             <input matInput type:search placeholder="Αναζητηση....." #box (keyup.enter)="onEnter(box.value)">
 
         </mat-form-field>
-        <mat-slide-toggle>Slide me!</mat-slide-toggle>
+        <mat-slide-toggle (change)="onSearchModeClick($event)">{{searchMode}}</mat-slide-toggle>
     </form>
     <mat-expansion-panel>
         <mat-expansion-panel-header>

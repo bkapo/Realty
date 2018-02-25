@@ -10,8 +10,6 @@ import { InvolvepdPartyModel } from '../../shared/models/involved-party.model';
 import { REPService } from '../../core/realestate-property.service';
 import { IPService } from '../../core/involved-party.service';
 
-
-
 @Component({
   selector: 'app-search-box',
   templateUrl: './search-box.component.html',
@@ -21,6 +19,7 @@ export class SearchBoxComponent implements OnInit {
   propertyID: number;
   involvedparties: Array<InvolvepdPartyModel>;
   realesateproeprties: Array<RealEstatePropertyModel>;
+  searchMode = 'Πελάτες';
 
   constructor(
     public snackBar: MatSnackBar,
@@ -35,15 +34,28 @@ export class SearchBoxComponent implements OnInit {
   onEnter(q: string) {
     this.involvedparties = null;
     this.realesateproeprties = null;
+    if (this.searchMode === 'Πελάτες') {
 
-    this.ipService.searchInolvedPartyByLastName(q)
-      .subscribe(
-      (people: InvolvepdPartyModel[]) => this.involvedparties = people,
-      error => this.openSnackBar(error, 'Search')
+      this.ipService.searchInolvedPartyByLastName(q).subscribe(
+        (people: InvolvepdPartyModel[]) => this.involvedparties = people,
+        error => this.openSnackBar(error, 'Search IP')
       );
-    // const propID: number = +q;
-    // this.propertyID  = +q;
-    //  this.router.navigate(['/rpList', this.propertyID]);
+
+    } else {
+      const propID: number = +q;
+      this.repService.getPropertybyid(propID).subscribe(
+        (rp: RealEstatePropertyModel) => { this.realesateproeprties = []; this.realesateproeprties.push(rp); },
+        error => this.openSnackBar(error, 'Search RE')
+      );
+    }
+  }
+
+  onSearchModeClick() {
+    if (this.searchMode === 'Πελάτες') {
+      this.searchMode = 'Ακίνητα';
+    } else {
+      this.searchMode = 'Πελάτες';
+    }
   }
 
   openSnackBar(message: string, action: string) {
