@@ -14,22 +14,20 @@ export class RealtyPropertyListContainerComponent implements  OnDestroy, OnChang
   id: any;
   realtyPropertyList: Array<RealEstatePropertyModel> = [];
   private sub: any;
-  @Input() propertyId;
+  // @Input() propertyId;
 
   constructor(public repService: REPService, private route: ActivatedRoute) { }
 
 
-
   ngOnChanges() {
-    // this.sub = this.route.params.subscribe(params => {
-    //   this.id = +params['id']; // (+) converts string 'id' to a number
-    //   this.getPropertybyid();
-    // });
-    this.getPropertybyid();
+    this.sub = this.route.params.subscribe(params => {
+      this.id = +params['id']; // (+) converts string 'id' to a number
+      this.getPropertybyid();
+    });
   }
 
   getPropertybyid() {
-    this.repService.getPropertybyid(this.propertyId).subscribe((rp: RealEstatePropertyModel) => {
+    this.repService.getPropertybyid(this.id).subscribe((rp: RealEstatePropertyModel) => {
       console.log(rp);
       this.realtyPropertyList = [];
       this.realtyPropertyList.push(rp);
@@ -37,7 +35,7 @@ export class RealtyPropertyListContainerComponent implements  OnDestroy, OnChang
   }
 
   ngOnDestroy() {
-    this.sub.unsubscribe();
+   // this.sub.unsubscribe();
   }
 
 }

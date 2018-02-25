@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { realtyPropertyRoutes } from './realty-property-routing.module';
+import { RealtyPropertyRoutingModule } from './realty-property-routing.module';
 
 import { SharedModule } from '../shared/shared.module';
 import { MaterialModule } from '../material/material.module';
@@ -14,7 +14,7 @@ import { RealtyPropertyListContainerComponent } from './realty-property-list-con
   imports: [
     SharedModule,
     MaterialModule,
-    realtyPropertyRoutes
+    RealtyPropertyRoutingModule
   ],
   declarations: [
     RealtyPropertyListItemComponent,
