@@ -9,6 +9,7 @@ import { RealEstatePropertyModel } from '../../shared/models/realestate-property
 import { InvolvepdPartyModel } from '../../shared/models/involved-party.model';
 import { REPService } from '../../core/realestate-property.service';
 import { IPService } from '../../core/involved-party.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-search-box',
@@ -25,26 +26,35 @@ export class SearchBoxComponent implements OnInit {
     public snackBar: MatSnackBar,
     private router: Router,
     public repService: REPService,
-    public ipService: IPService
+    public ipService: IPService,
+    private spinner: NgxSpinnerService
   ) { }
 
   ngOnInit() {
   }
 
   onEnter(q: string) {
+    this.spinner.show();
     this.involvedparties = null;
     this.realesateproeprties = null;
     if (this.searchMode === 'Πελάτες') {
 
       this.ipService.searchInolvedPartyByLastName(q).subscribe(
-        (people: InvolvepdPartyModel[]) => this.involvedparties = people,
+        (people: InvolvepdPartyModel[]) => {
+          this.involvedparties = people;
+          this.spinner.hide();
+        },
         error => this.openSnackBar(error, 'Search IP')
       );
 
     } else {
       const propID: number = +q;
       this.repService.getPropertybyid(propID).subscribe(
-        (rp: RealEstatePropertyModel) => { this.realesateproeprties = []; this.realesateproeprties.push(rp); },
+        (rp: RealEstatePropertyModel) => {
+          this.realesateproeprties = [];
+          this.realesateproeprties.push(rp);
+          this.spinner.hide();
+        },
         error => this.openSnackBar(error, 'Search RE')
       );
     }
@@ -59,6 +69,7 @@ export class SearchBoxComponent implements OnInit {
   }
 
   openSnackBar(message: string, action: string) {
+    this.spinner.hide();
     this.snackBar.open(message, action, {
       duration: 2000,
     });
