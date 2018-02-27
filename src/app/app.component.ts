@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
+import { MatSpinner } from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +9,9 @@ import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnDestroy {
+  public matSpinner = MatSpinner;
   title = 'Epsilon Realty';
-
   mobileQuery: MediaQueryList;
-
-  // fillerNav = Array(50).fill(0).map((_, i) => `Nav Item ${i + 1}`);
-
   private _mobileQueryListener: () => void;
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {

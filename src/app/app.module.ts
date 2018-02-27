@@ -21,6 +21,8 @@ import { AppRoutingModule } from './app-routing.module';
 /* Feature Modules */
 import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
 
+import { MatSpinner } from '@angular/material';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -37,6 +39,9 @@ import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    MatSpinner
+]
 })
 export class AppModule  { }
