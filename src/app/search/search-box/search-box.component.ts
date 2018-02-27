@@ -50,7 +50,7 @@ export class SearchBoxComponent implements OnInit {
     }
   }
 
-  onSearchModeClick() {
+  onSearchModeClick(event) {
     if (this.searchMode === 'Πελάτες') {
       this.searchMode = 'Ακίνητα';
     } else {

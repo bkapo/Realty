@@ -30,6 +30,10 @@ h1.example-app-name {
     flex: 1 0 auto;
 }
 
+mat-sidenav {
+    width: 200px;
+}
+
 
 /* Absolute Center Spinner */
 
