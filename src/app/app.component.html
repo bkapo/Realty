@@ -26,12 +26,9 @@
             </mat-nav-list>
         </mat-sidenav>
         <mat-sidenav-content>
-            <ngx-spinner></ngx-spinner>
             <router-outlet></router-outlet>
-
-            <!-- <div class="loading-indicator">
-                <mat-progress-spinner mode="indeterminate" color="accent"></mat-progress-spinner>
-            </div> -->
+            <spinner backgroundColor="#ff0000" spinner="sk-chasing-dots">
+            </spinner>
         </mat-sidenav-content>
 
     </mat-sidenav-container>

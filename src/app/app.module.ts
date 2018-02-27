@@ -19,7 +19,7 @@ import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 
 /* Feature Modules */
-import { NgxSpinnerModule } from 'ngx-spinner';
+import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     MaterialModule,
     CoreModule,
     AppRoutingModule,
-    NgxSpinnerModule,
+    NgHttpLoaderModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
 
   ],

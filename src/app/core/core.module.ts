@@ -11,25 +11,22 @@ import { REPService } from './realestate-property.service';
 import { Blobservice } from './blob.service';
 import { GeoDataService } from './geodata.service';
 
-import { NgxSpinnerService } from 'ngx-spinner';
-
 @NgModule({
   imports: [
     CommonModule,
     SharedModule
   ],
-  declarations: [],
+  declarations: [
+  ],
   exports: [
   ],
   providers: [
     IPService,
     REPService,
     Blobservice,
-    GeoDataService,
-    NgxSpinnerService
+    GeoDataService
   ]
 })
-
 
 export class CoreModule {
 
