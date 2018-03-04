@@ -8,6 +8,7 @@
         "outDir": "dist",
         "assets": [
             "assets",
+            "web.config",
             "manifest.json",
             "favicon.ico"
         ],
