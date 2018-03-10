@@ -8,6 +8,11 @@ import { environment } from '../environments/environment';
 
 /* Angular Material */
 import { MaterialModule } from './material/material.module';
+import { MatSpinner } from '@angular/material';
+
+/* Angular Fire 2 */
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireStorageModule } from 'angularfire2/storage';
 
 /* App Imports */
 import { AppComponent } from './app.component';
@@ -21,7 +26,7 @@ import { AppRoutingModule } from './app-routing.module';
 /* Feature Modules */
 import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
 
-import { MatSpinner } from '@angular/material';
+
 
 @NgModule({
   declarations: [
@@ -31,6 +36,13 @@ import { MatSpinner } from '@angular/material';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    AngularFireModule.initializeApp({
+      apiKey: 'AIzaSyBfaydo1Vh9OXBY53pKPT1hPiHXmnXhZSk',
+      authDomain: 'realtyapi2018.firebaseapp.com',
+      storageBucket: 'realtyapi2018.appspot.com',
+      projectId: 'realtyapi2018',
+    }),
+    AngularFireStorageModule,
     MaterialModule,
     CoreModule,
     AppRoutingModule,
