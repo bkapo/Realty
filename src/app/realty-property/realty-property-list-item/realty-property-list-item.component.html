@@ -7,8 +7,8 @@
                 <mat-icon>map</mat-icon>
                 <span>Χαρτης</span>
               </button>
-        <button mat-menu-item>
-                <mat-icon>mode_edit</mat-icon>
+        <button mat-menu-item (click)="editre()">
+                <mat-icon >mode_edit</mat-icon>
                 <span>Edit</span>
               </button>
     </mat-menu>
@@ -24,3 +24,5 @@
     </p>
 </mat-list-item>
 <mat-divider></mat-divider>
+
+<!-- <button mat-menu-item [routerLink]="['',555]" (click) ="editre()" routerLinkActive="active"> -->

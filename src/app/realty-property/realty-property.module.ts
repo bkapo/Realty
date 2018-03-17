@@ -12,6 +12,8 @@ import { RealtyPropertyItemComponent } from './realty-property-item/realty-prope
 import { RealtyPropertyAdditemComponent } from './realty-property-additem/realty-property-additem.component';
 import { RealtyPropertyEdititemComponent } from './realty-property-edititem/realty-property-edititem.component';
 import { RealtyPropertyCommercialItemComponent } from './realty-property-commercial-item/realty-property-commercial-item.component';
+import { RealtyPropertyMainComponent } from './realty-property-main/realty-property-main.component';
+import { RealtyPropertySearchComponent } from './realty-property-search/realty-property-search.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { RealtyPropertyCommercialItemComponent } from './realty-property-commerc
     RealtyPropertyItemComponent,
     RealtyPropertyAdditemComponent,
     RealtyPropertyEdititemComponent,
-    RealtyPropertyCommercialItemComponent
+    RealtyPropertyCommercialItemComponent,
+    RealtyPropertyMainComponent,
+    RealtyPropertySearchComponent
   ],
   exports: [
     RealtyPropertyListItemComponent,

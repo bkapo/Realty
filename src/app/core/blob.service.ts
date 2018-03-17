@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { map, filter } from 'rxjs/operators';
 import { ReplaySubject } from 'rxjs/ReplaySubject';
@@ -10,7 +10,7 @@ export class Blobservice {
     // images: Subject<string[]>;
     imagelist: Array<string> = new Array<string>();
 
-    constructor(public http: Http) {
+    constructor(public http: HttpClient) {
         this.http = http;
 
         this.imagelist.push('../assets/img/re1.jpeg');

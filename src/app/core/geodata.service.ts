@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 
 import { ESTATEPROPERTIES_API_URL } from './data.service';
 
@@ -8,7 +8,7 @@ export class GeoDataService {
 
     REST_API_URL: string = ESTATEPROPERTIES_API_URL;
 
-    constructor(public http: Http) {
+    constructor(public http: HttpClient) {
         this.http = http;
     }
 

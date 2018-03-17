@@ -1,4 +1,6 @@
-<mat-nav-list>
+<mat-list>
     <app-realty-property-list-item *ngFor="let rp of rpList" [realEstate]="rp">
     </app-realty-property-list-item>
-</mat-nav-list>
+</mat-list>
+
+<router-outlet></router-outlet>
