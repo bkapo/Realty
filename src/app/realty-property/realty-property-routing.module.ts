@@ -18,18 +18,14 @@ const realtyPropertyRoutes: Routes = [
         children: [
           {
             path: '',
-            component: RealtyPropertyListComponent,
-            children: [
-              {
-                path: ':id',
-                component: RealtyPropertyEdititemComponent
-              },
-            ]
+            component: RealtyPropertyListComponent
           }
         ]
       }
     ]
-  }
+  },
+
+  { path: ':id', component: RealtyPropertyEdititemComponent},
 ];
 
 

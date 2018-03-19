@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+/* Angular Flex*/
+import {FlexLayoutModule} from '@angular/flex-layout';
+
 // Pipes
 import { InvolvedPartyTypePipe } from './pipes/involved-party-type.pipe';
 import { KeysPipe } from './pipes/keys.pipe';
@@ -37,7 +40,8 @@ const REALTY_PIPES = [
 ];
 
 @NgModule({
-    imports: [CommonModule],
+    imports: [CommonModule,
+      FlexLayoutModule],
     declarations: [
       REALTY_PIPES
     ],
@@ -46,6 +50,7 @@ const REALTY_PIPES = [
       CommonModule,
       FormsModule,
       ReactiveFormsModule,
+      FlexLayoutModule,
       REALTY_PIPES,
       NgcFloatButtonModule
     ]

@@ -10,6 +10,7 @@ import { environment } from '../environments/environment';
 import { MaterialModule } from './material/material.module';
 import { MatSpinner } from '@angular/material';
 
+
 /* Angular Fire 2 */
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireStorageModule } from 'angularfire2/storage';

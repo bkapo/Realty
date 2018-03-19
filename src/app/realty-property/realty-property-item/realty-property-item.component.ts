@@ -20,7 +20,6 @@ export class RealtyPropertyItemComponent implements OnInit {
 
   @Input() estateproperty: RealEstatePropertyModel;
   estateform: FormGroup;
-  estateSegment = 'Basic';
   responsibleFullName = 'Επιλέξτε';
   ownerFullName = 'Επιλέξτε';
   propesedByFullName = 'Επιλέξτε';
@@ -42,6 +41,13 @@ export class RealtyPropertyItemComponent implements OnInit {
   periferiakesEnotites: Array<PeriferiakiEnotita>;
   dimoi: Array<Dimos>;
 
+  tiles = [
+    {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
+    {text: 'Two', cols: 1, rows: 2, color: 'lightgreen'},
+    {text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
+    {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
+  ];
+
   constructor(public fb: FormBuilder,
     public repService: REPService,
     public blobService: Blobservice,
@@ -53,6 +59,8 @@ export class RealtyPropertyItemComponent implements OnInit {
     this.periferies = this.geoDataService.getPeriferies();
     this.periferiakesEnotites = this.geoDataService.getPeriferiakesEnoties().filter((i) => i.periferiaid === 0);
     this.dimoi = this.geoDataService.getDimous().filter((i) => i.periferiakienotiaid === 0);
+
+
 
     this.buildForm();
   }

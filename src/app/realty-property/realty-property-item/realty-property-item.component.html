@@ -1,8 +1,56 @@
-<form [formGroup]="estateform" (ngSubmit)="onSubmit(estateform)">
+<form [formGroup]="estateform">
+
+
 
     <mat-tab-group>
-        <mat-tab label="Tab 1">Content 1</mat-tab>
-        <mat-tab label="Tab 2">Content 2</mat-tab>
+        <mat-tab label="Γενικά">
+
+            <mat-card>
+                <mat-card-title>
+                    <mat-form-field>
+                        <input matInput formControlName="Title">
+                    </mat-form-field>
+                </mat-card-title>
+
+                <mat-card-content>
+                    <div fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+                        <div class="item item-1" fxFlex="35%">
+                            <mat-radio-group formControlName="Purpose">
+                                <mat-radio-button *ngFor="let item of propPurpose | keys" [value]="item.key">
+                                    {{item.value}}
+                                </mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                        <div class="item item-2" fxFlex="20%">
+                            <mat-form-field>
+                                <mat-select placeholder="Κατηγορία" formControlName="PropertyCategory">
+                                    <mat-option *ngFor="let item of propCategories | keys" [value]="item.key">
+                                        {{item.Value}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="item item-3" fxFlex>Item 3</div>
+                    </div>
+
+
+
+                    <mat-slide-toggle formControlName="NewConstruction">Νεοδμητο</mat-slide-toggle>
+                    <mat-slide-toggle formControlName="StoneHome">StoneHome</mat-slide-toggle>
+                </mat-card-content>
+            </mat-card>
+        </mat-tab>
+
+        <mat-tab label="Δωμάτια"></mat-tab>
+        <mat-tab label="Φωτογραφίες"></mat-tab>
+        <mat-tab label="Θερμανση - Ασφαλεια"></mat-tab>
+        <mat-tab label="Περιβαλλων Χωρος - Parking"></mat-tab>
+        <mat-tab label="Χαρακτηριστικα"></mat-tab>
+        <mat-tab label="Τοποθεσια"></mat-tab>
+        <mat-tab label="Διαχειριση"></mat-tab>
     </mat-tab-group>
 
 </form>
+
+<!-- 
+<pre>{{estateform.value | json}}</pre> -->
