@@ -1,9 +1,13 @@
-<mat-card>
-    <form class="example-form">
-        <mat-form-field class="example-full-width">
+<div fxLayout.xs="column" fxLayoutAlign="right" fxLayoutGap="10px">
+
+    <form>
+        <mat-form-field>
             <input matInput type:search placeholder="Αναζητηση....." #box (keyup.enter)="onEnter(box.value)">
         </mat-form-field>
     </form>
+</div>
+
+<mat-card>
     <mat-expansion-panel>
         <mat-expansion-panel-header>
             <mat-panel-title>

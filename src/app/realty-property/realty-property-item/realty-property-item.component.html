@@ -8,32 +8,39 @@
             <mat-card>
                 <mat-card-title>
                     <mat-form-field>
-                        <input matInput formControlName="Title">
+                        <input matInput placeholder="Τίτλος" formControlName="Title">
                     </mat-form-field>
                 </mat-card-title>
 
                 <mat-card-content>
+
+                    <div fxLayout>
+                        <mat-radio-group fxLayoutAlign="space-around" fxLayoutGap="10px" formControlName="Purpose">
+                            <mat-radio-button *ngFor="let item of propPurpose | keys" [value]="item.key">
+                                {{item.value}}
+                            </mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+
                     <div fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
-                        <div class="item item-1" fxFlex="35%">
+                        <div fxFlex="35%">
                             <mat-radio-group formControlName="Purpose">
                                 <mat-radio-button *ngFor="let item of propPurpose | keys" [value]="item.key">
                                     {{item.value}}
                                 </mat-radio-button>
                             </mat-radio-group>
                         </div>
-                        <div class="item item-2" fxFlex="20%">
+                        <div fxFlex="20%">
                             <mat-form-field>
                                 <mat-select placeholder="Κατηγορία" formControlName="PropertyCategory">
                                     <mat-option *ngFor="let item of propCategories | keys" [value]="item.key">
-                                        {{item.Value}}
+                                        {{item.value}}
                                     </mat-option>
                                 </mat-select>
                             </mat-form-field>
                         </div>
                         <div class="item item-3" fxFlex>Item 3</div>
                     </div>
-
-
 
                     <mat-slide-toggle formControlName="NewConstruction">Νεοδμητο</mat-slide-toggle>
                     <mat-slide-toggle formControlName="StoneHome">StoneHome</mat-slide-toggle>
