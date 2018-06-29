@@ -10,6 +10,7 @@ import { IPService } from './involved-party.service';
 import { REPService } from './realestate-property.service';
 import { Blobservice } from './blob.service';
 import { GeoDataService } from './geodata.service';
+import { FirestoreProvider } from "./firestore.service"; 
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import { GeoDataService } from './geodata.service';
     IPService,
     REPService,
     Blobservice,
-    GeoDataService
+    GeoDataService,
+    FirestoreProvider
   ]
 })
 

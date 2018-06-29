@@ -14,6 +14,7 @@ import { MatSpinner } from '@angular/material';
 /* Angular Fire 2 */
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 /* App Imports */
 import { AppComponent } from './app.component';
@@ -37,21 +38,24 @@ import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    AngularFireModule.initializeApp({
-      apiKey: 'AIzaSyBfaydo1Vh9OXBY53pKPT1hPiHXmnXhZSk',
-      authDomain: 'realtyapi2018.firebaseapp.com',
-      storageBucket: 'realtyapi2018.appspot.com',
-      projectId: 'realtyapi2018',
-    }),
-    AngularFireStorageModule,
     MaterialModule,
     CoreModule,
     AppRoutingModule,
     NgHttpLoaderModule,
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyBfaydo1Vh9OXBY53pKPT1hPiHXmnXhZSk",
+      authDomain: "realtyapi2018.firebaseapp.com",
+      databaseURL: "https://realtyapi2018.firebaseio.com",
+      projectId: "realtyapi2018",
+      storageBucket: "realtyapi2018.appspot.com",
+      messagingSenderId: "305437971860"
+    }),
+    AngularFireStorageModule,
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }
+  )
 
   ],
-  providers: [],
+  providers: [AngularFirestore],
   bootstrap: [AppComponent],
   entryComponents: [
     MatSpinner

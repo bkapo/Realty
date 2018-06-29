@@ -2,14 +2,17 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { RealEstatePropertyModel } from '../../shared/models/realestate-property.model';
+
 import {
   PropertyCategory, HousePropertyType, OtherPropertyType,
   LandPropertyType, CommercialPropertyType, Purpose, HeatingCategory,
   HeatingType, LandZone, Orientation, Access, EnergyPerformance
 } from '../../shared/models/propertyabstract.model';
+
 import { Country, Periferia, PeriferiakiEnotita, Dimos, GeoDataService } from '../../core/geodata.service';
 import { REPService } from '../../core/realestate-property.service';
 import { Blobservice } from '../../core/blob.service';
+import { FirestoreProvider } from '../../core/firestore.service';
 
 @Component({
   selector: 'app-realty-property-item',
@@ -51,7 +54,9 @@ export class RealtyPropertyItemComponent implements OnInit {
   constructor(public fb: FormBuilder,
     public repService: REPService,
     public blobService: Blobservice,
-    public geoDataService: GeoDataService) { }
+    public geoDataService: GeoDataService,
+    public firestoreProvider: FirestoreProvider
+  ) { }
 
   ngOnInit() {
 
@@ -60,9 +65,27 @@ export class RealtyPropertyItemComponent implements OnInit {
     this.periferiakesEnotites = this.geoDataService.getPeriferiakesEnoties().filter((i) => i.periferiaid === 0);
     this.dimoi = this.geoDataService.getDimous().filter((i) => i.periferiakienotiaid === 0);
 
-
-
     this.buildForm();
+  }
+
+  createFirestoreObject(): void{
+    const ResponsibleId = this.estateproperty.ResponsibleId;
+    const Responsible = this.estateproperty.Responsible;
+    const OwnerId = this.estateproperty.OwnerId;
+    const Owner = this.estateproperty.Owner; 
+    const ProposedId = this.estateproperty.ProposedId; 
+    const Proposed = this.estateproperty.Proposed;
+    const cPropertyCategory = this.estateproperty.PropertyCategory;
+    const cPurpose = this.estateproperty.Purpose;
+
+    this.firestoreProvider.createIP(
+      ResponsibleId,
+      Responsible,
+      OwnerId,
+      Owner,
+      ProposedId,
+      Proposed
+    );
   }
 
   buildForm(): void {
