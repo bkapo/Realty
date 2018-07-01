@@ -28,7 +28,7 @@ import { AppRoutingModule } from './app-routing.module';
 /* Feature Modules */
 import { NgHttpLoaderModule } from 'ng-http-loader';
 
-
+export const firebaseConfig = environment.firebaseConfig;
 
 @NgModule({
   declarations: [
@@ -42,14 +42,7 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
     CoreModule,
     AppRoutingModule,
     NgHttpLoaderModule,
-    AngularFireModule.initializeApp({
-      apiKey: 'AIzaSyBfaydo1Vh9OXBY53pKPT1hPiHXmnXhZSk',
-      authDomain: 'realtyapi2018.firebaseapp.com',
-      databaseURL: 'https://realtyapi2018.firebaseio.com',
-      projectId: 'realtyapi2018',
-      storageBucket: 'realtyapi2018.appspot.com',
-      messagingSenderId: '305437971860'
-    }),
+    AngularFireModule.initializeApp(firebaseConfig),
     AngularFireStorageModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }
   )
