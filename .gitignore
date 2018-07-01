@@ -32,7 +32,7 @@
 npm-debug.log
 testem.log
 /typings
-/environments/*.ts
+/src/environments/*.ts
 
 # e2e
 /e2e/*.js
